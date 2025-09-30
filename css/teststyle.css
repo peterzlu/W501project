@@ -1,0 +1,360 @@
+:root{
+  /* แก้ 100vh บนมือถือด้วย JS (--vh) และใช้ dvh เมื่อรองรับ */
+  --vh: 1vh;
+
+  /* สี/ตัวอักษร */
+  --ink:#0b1118;                /* สีตัวอักษรนอกเฟรม (ถ้าต้องใช้) */
+  --ink-on-dark:#e8f0f7;        /* สีในเฟรม */
+  --muted:#9fb0c0;
+  --bg-out:#ffffff;             /* << พื้นนอกเฟรม = ขาว */
+  --bg-stage:#0c121a;           /* << พื้นในเฟรม = ดำ */
+  --line:#223244; --chip:#294056; --brand:#163249; --danger:#ff6b6b;
+
+  --fs: clamp(14px, 1.1vmin + 0.9vw, 18px);
+  --padX: clamp(14px, 3vmin, 24px);
+  --padY: clamp(16px, 3.4vmin, 28px);
+
+  --fade: 360ms; --fade-slow: 640ms;
+}
+
+html, body { height:100%; }
+*{ box-sizing:border-box; }
+body{
+  margin:0; background: var(--bg-out); color: var(--ink);
+  font:500 var(--fs)/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+       Roboto, "Noto Sans Thai", "Noto Sans", Arial, sans-serif;
+  overflow:hidden; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  background: black;
+}
+
+/* เวที 9:16 วางกึ่งกลางแนวนอนและชิดด้านบน (กันช่องว่างด้านบน) */
+#stage{
+  position:fixed; 
+  inset:0;
+  display:grid; place-items: start center;
+}
+
+/* โหมด Cover: สูง = จอเสมอ */
+#stage-inner{
+  position: relative;
+  height: calc(var(--vh) * 100);
+  width: calc((var(--vh) * 100) * 9 / 16);
+  max-width: 100vw;             /* กันล้นจอแคบ */
+  background: var(--bg-stage);
+  color: var(--ink-on-dark);
+  overflow: hidden;
+}
+
+/* ใช้ dvh เมื่อรองรับ เพื่อความแม่นบนมือถือใหม่ ๆ */
+@supports (height: 100dvh){
+  #stage-inner{
+    height: 100dvh;
+    width:  min(100vw, calc(100dvh * 9 / 16));
+  }
+}
+
+
+#stage-content{
+  position:absolute; inset:0;
+  padding-top: 0; 
+  display:flex; flex-direction:column;
+}
+.center{
+  display:grid; place-items:center; text-align:center;
+  gap: clamp(10px, 2.2vmin, 18px); margin:auto 0;
+}
+
+/* ตัวอักษรในเฟรม */
+h1{ margin:0; font-size: clamp(22px, 3.6vmin + 1.2vw, 40px); letter-spacing:.4px; color:var(--ink-on-dark); }
+.tag{ margin:.3rem auto 0; color:var(--muted); max-width:34ch; font-size: clamp(13px, 1.6vmin + .35vw, 18px); }
+label{ font-weight:700; letter-spacing:.2px; font-size: clamp(14px, 1.7vmin + .2vw, 18px); text-align:left; display:block; color:var(--ink-on-dark); }
+
+/* ฟอร์ม + ปุ่ม */
+.field{ width:100%; text-align:left; margin-top: clamp(10px, 2vmin, 16px); }
+input[type="text"]{
+  width:75%; background:#3a5ab5; color:var(--ink-on-dark);
+  border:1px solid; outline:none;
+  padding: clamp(12px, 2.2vmin, 16px) clamp(14px, 2.6vmin, 18px);
+  font-size: clamp(15px, 2vmin + .4vw, 20px);
+  transition: box-shadow .2s, border-color .2s;
+  margin-top: -7.5%;
+}
+input::placeholder{ color:#cccdce; }
+input:focus{ border-color:#2c90ff; box-shadow:0 0 0 3px rgba(44,144,255,.25); }
+
+.error{ min-height:1.2em; color:var(--danger);
+        font-size: clamp(13px, 1.6vmin + .2vw, 16px); text-align:center; }
+
+.btn{
+  appearance:none; border:1px solid var(--chip); color:black; background:white;
+  cursor:pointer; width:100%;
+  padding: clamp(7px, 2.4vmin, 7px);
+  font-weight:800; letter-spacing:.25px; font-size: clamp(16px, 2.2vmin + .6vw, 22px);
+  transition: transform .08s, filter .2s, background.2s;
+  width: 25%;
+  border: 0;
+}
+
+/* เอฟเฟกต์นิดหน่อย */
+.fade-in{ opacity:0;; animation: fadeIn var(--fade) ease forwards; animation-duration: 1.5s;}
+.fade-in-slow{ opacity:0; animation: fadeIn var(--fade-slow) ease forwards; 
+animation-duration: 3s;}
+.fade-in-slower{ opacity:0; animation: fadeIn var(--fade-slow) ease forwards; 
+animation-duration: 6s;}
+
+@keyframes fadeIn{ to{ opacity:1; transform:none; } }
+.kanit-thin {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.kanit-extralight {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.kanit-light {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kanit-medium {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.kanit-bold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.kanit-extrabold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.kanit-black {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.kanit-thin-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.kanit-extralight-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.kanit-light-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.kanit-regular-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.kanit-medium-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.kanit-semibold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.kanit-bold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.kanit-extrabold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.kanit-black-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+.fade-target {
+  opacity: 1; /* Initial state: fully visible */
+  transition: opacity 0.5s ease-out; /* Smooth transition for opacity */
+}
+
+.fade-out {
+  opacity: 0; /* Final state: fully transparent */
+  pointer-events: none; /* Disables interaction with the faded element */
+  visibility: hidden; /* Hides the element after the transition */
+  transition: opacity 0.5s ease-out, visibility 0s 0.5s; /* Delay visibility change */
+}
+
+.black-layer {
+        position:absolute; inset:0;
+        -webkit-background-size: cover;
+  -moz-background-size: cover; 
+  -o-background-size: cover;
+  background-size: cover; 
+  opacity:1;
+  z-index: 0;
+  background-image: url("/Media/Photos/Messageblack.png");
+  opacity: 50%;
+      }
+
+      .hidden {
+  display: none;
+}
+      .fixed {
+        position: fixed;
+        margin-top: 45%;
+      }
+
+      .subtitle {
+        opacity: 50%;
+      }
+
+      .bg{
+  position: absolute; inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.black-curtain-fixed {
+        position: fixed; /* Or absolute, depending on your layout */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 0; /* Ensure it's on top of other content */
+        opacity: 0.75;
+    }
+
+.black-curtain {
+        position: fixed; /* Or absolute, depending on your layout */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 0; /* Ensure it's on top of other content */
+        opacity: 0;
+    }
+     @keyframes fadecurtain {
+          0% { opacity: 0;}
+          100% {opacity: 0.75;}
+        }
+
+.black-curtain.fade-in {
+        animation-name: fadecurtain;
+        animation-duration: 2s;
+    }
+
+  .black-overlay {
+        position: fixed; /* Or absolute, depending on your layout */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0; /* Start fully transparent */
+        pointer-events: none; /* Allows interaction with elements beneath */
+        transition: opacity 1s ease-in-out; /* Adjust duration and timing function */
+        z-index: 9999; /* Ensure it's on top of other content */
+    }
+
+     /* Class to trigger the fade to black */
+    .black-overlay.fade-in-black {
+        opacity: 1; /* Fade to fully opaque black */
+        pointer-events: auto; /* Prevent interaction with elements beneath */
+    }
+
+    .prologuebtn {
+margin-top: 45%;
+}
+
+    .note p {
+        transition: opacity 2s ease-in-out; /* ทำให้การเปลี่ยนแปลง opacity ใช้เวลา 1 วินาที */
+    }
+    .invisible-note {
+      opacity: 0;
+    }
+
+    .notes {
+      font-size: 14px;
+    }
+
+    .nextbtn {
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  color: #ffffff;
+  justify-content: center;
+  font-size: 100%;
+  border-color: transparent ;
+  border: 2px solid white;
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  width: 50%;
+}
+
+.theword {
+   color: #fff; /* Set the text color to white or a light color */
+  text-shadow: 0 0 10px #ffffff; /* Horizontal offset, Vertical offset, Blur radius, Color */
+}
+
+.fade-in-whiteoverlay {
+  background-color: white;
+  opacity: 0; /* Starts transparent */
+  transition: opacity 1s ease-in-out; /* Animates opacity over 1 second */
+}
+
+.fade-in-whiteoverlay.active {
+  opacity: 1; /* Becomes fully opaque */
+}
+
+.fade-out-whiteoverlay {
+  background-color: white;
+  opacity: 1; /* Starts fully opaque */
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-out-whiteoverlay.active {
+  opacity: 0; /* Becomes transparent */
+}

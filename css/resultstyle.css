@@ -1,0 +1,289 @@
+:root { --vh: 1vh; 
+}
+
+
+html,body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, "Kanit", sans-serif;
+}
+
+#stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== 9:16 frame กลางจอ (ไม่โค้งมน) ===== */
+.loadingscene {
+  position: relative;
+  height: calc(var(--vh) * 100);
+  width: min(calc(var(--vh) * 100 * 9 / 16), 100%); /* คง 9:16; มือถือ = เต็มจอ, จอใหญ่ = อยู่กลาง */
+  background: var(--bg) no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0); /* ป้องกันเบราว์เซอร์เติมขอบมนแปลก ๆ */
+}
+
+/* เริ่มต้นล็อกปุ่ม */
+.loadbtn { opacity:.5; pointer-events:none; }
+/* ปลดล็อกเมื่อโหลดครบ (JS ใส่ .ready ให้อัตโนมัติ) */
+.loadbtn.ready { opacity:1; pointer-events:auto; }
+
+
+.hidden { opacity:0; visibility:hidden; }
+
+.fade-in {
+  animation: fadeIn 2s forwards;
+}
+.fade-out{
+  animation: fadeOut 2s;
+}
+
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes fadeOut { from{opacity:1} to{opacity:0} }
+
+.scene {
+  position: relative;
+  height: calc(var(--vh) * 100);
+  width: min(calc(var(--vh) * 100 * 9 / 16), 100%); /* คง 9:16; มือถือ = เต็มจอ, จอใหญ่ = อยู่กลาง */
+  background: var(--bg) no-repeat center/cover;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0); /* ป้องกันเบราว์เซอร์เติมขอบมนแปลก ๆ */
+  content-visibility: auto; contain-intrinsic-size: 1000px 562px;
+}
+
+
+/* overlay ดำโปร่ง (กำหนดระดับด้วยคลาส) */
+.overlay { position: absolute; inset: 0; pointer-events: none; }
+.overlay.dim-25 { background: rgba(0,0,0,.25); }
+.overlay.dim-50 { background: rgba(0,0,0,.5); }
+
+
+.content {
+  position: relative; z-index: 1;
+  padding: 24px;
+  max-width: 88%;
+  margin-inline: auto;
+}
+
+.center { display: flex; flex-direction: column; align-items: center; }
+
+.next {
+  width: 35%;
+}
+
+/* ===== Loader (Scene 0) ===== */
+.loader .loader-wrap{
+  display:flex; flex-direction:column; align-items:center; gap:14px;
+  width:min(78%, 420px);
+}
+.loader-title{ font-weight:700; font-size: clamp(25.88px, 2.6vmin, 41.88px); }
+
+.progress{
+  width:100%; height: 10px; border-radius: 999px;
+  background: rgba(255,255,255,.2); overflow:hidden;
+}
+.progress .bar{
+  height:100%; width:0%;
+  background: #fff; border-radius: 999px 0 0 999px;
+  transition: width .25s ease;
+}
+.percent{ font-size: clamp(18px, 3.5vmin, 24px); font-weight:700; letter-spacing: .5px;}
+.small{ opacity:1; font-size: 20px; }
+
+#loaderStartBtn[disabled]{ opacity:.5; cursor: not-allowed; }
+
+/* เฟด Loader ออก */
+.fade-out { animation: loaderOut .6s ease forwards; }
+@keyframes loaderOut { to { opacity:0; transform: translateY(-12px); } }
+
+
+/* ปุ่มทั่วไป (ใช้กับ <a class="btn">) */
+a.loadbtn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.2;
+  background: #888;      /* สีพื้นตอน disable */
+  color: #fff;
+  opacity: 0.5;          /* จางลงตอนโหลด */
+  pointer-events: none;  /* คลิกไม่ได้ตอนโหลด */
+  transition: all 0.3s ease;
+}
+
+/* สถานะเมื่อโหลดเสร็จ (ปลดล็อกแล้วเอา .is-disabled ออกใน JS) */
+a.loadbtn.ready {
+  background: white;
+  color: black;
+  opacity: 1;
+  pointer-events: auto;  /* คลิกได้ */
+}
+
+a.nextbtn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.2;
+  background: white;      /* สีพื้นตอน disable */
+  color: black;
+}
+
+
+.theword {
+  color: #fff; /* Base text color */
+  text-shadow:
+    0 0 15px #fff, 
+    0 0 20px #fff; 
+}
+
+.speaker{
+  opacity: 0.5;
+}
+
+
+.message{
+    padding-top: 25%;
+}
+
+#scene1 .message {
+  padding-top: 75%;
+}
+
+#scene3 .message {
+  padding-top: 50%;
+}
+
+#scene5 .message {
+  padding-top: 25%;
+}
+
+#scene7 .message {
+  padding-top: 75%;
+}
+
+.buttonbelow {
+position: fixed;
+left: 50%;
+bottom: 60px;
+transform: translateX(-50%);
+ z-index: 10; /* ให้ปุ่มอยู่ด้านบนเสมอ */
+}
+
+#scene1 .buttonbelow {
+position: fixed;
+left: 50%;
+bottom: 150px;
+transform: translateX(-50%);
+ z-index: 10; /* ให้ปุ่มอยู่ด้านบนเสมอ */
+}
+
+#scene2 .buttonbelow {
+position: fixed;
+left: 50%;
+bottom: 150px;
+transform: translateX(-50%);
+ z-index: 10; /* ให้ปุ่มอยู่ด้านบนเสมอ */
+}
+
+#scene3 .buttonbelow {
+position: fixed;
+left: 50%;
+bottom: 200px;
+transform: translateX(-50%);
+ z-index: 10; /* ให้ปุ่มอยู่ด้านบนเสมอ */
+}
+
+#scene4 .buttonbelow {
+position: fixed;
+left: 50%;
+bottom: 120px;
+transform: translateX(-50%);
+ z-index: 10; /* ให้ปุ่มอยู่ด้านบนเสมอ */
+}
+
+
+
+
+
+/* === Result Scene (ถอดแบบ resulttest) === */
+.result-wrap{
+  position:relative; width:100%; height:100%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding: var(--padY) var(--padX);
+}
+.poster{
+  position:relative;
+  width:min(92%, 640px);
+  aspect-ratio: 9 / 16;   /* กรอบแนวตั้ง */
+  overflow:hidden;
+  background:#111;
+  box-shadow: 0 6px 24px rgba(0,0,0,.45);
+}
+.poster > img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  display:block;
+}
+/* Hotspot “เพลงของคุณ” (ครอบมุมปกเพลง) */
+.song-hotspot{
+  position:absolute;
+  right: clamp(10px, 3vmin, 18px);
+  bottom: clamp(10px, 3vmin, 18px);
+  width: clamp(84px, 28%, 160px);
+  aspect-ratio: 1 / 1; /* สี่เหลี่ยมจัตุรัส */
+  cursor:pointer;
+  background: rgba(255,255,255,0.01);
+}
+.hint{
+  color:white; font-size: clamp(12px, 1.5vmin + .2vw, 14px);
+  text-align:center; margin-top: 0.75rem;
+}
+.btn-row{
+  display:flex; gap:12px; width: min(92%, 640px);
+  justify-content:center; flex-wrap:wrap;
+  margin-top: 6px;
+}
+.btn--secondary{
+  background:white; border:1px solid var(--chip);
+  color:#202020; border-radius:14px; padding:.9em 1.2em; font-weight:700;
+  cursor:pointer; font-size: clamp(14px, 2vmin, 18px);
+}
+.btn--secondary:active{ transform: translateY(1px); }
+
+
+/* (ถ้าต้องการให้ปุ่ม/โปสเตอร์กว้างสัมพันธ์บนจอใหญ่กว่านี้ ให้เพิ่ม media query ภายหลังได้) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

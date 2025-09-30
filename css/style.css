@@ -1,0 +1,141 @@
+:root{
+  --vh: 1vh; /* mobile fix */
+  --padX: clamp(16px, 4vw, 28px);
+  --padY: clamp(16px, 5vh, 28px);
+
+  --text: #fff;
+  --muted: #d1d1d1;
+  --chip: #ddd;
+
+  --btn-bg: #ffffff;
+  --btn-fg: #111;
+  --btn-radius: 16px;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin:0;
+  background:#000;
+  color:var(--text);
+  font-family: 'Kanit';
+}
+
+/* 9:16 stage wrapper */
+#stage{
+  min-height: calc(var(--vh) * 100);
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+#stage-inner{
+  position: relative;
+  width: min(100%, 700px);
+  height: calc(var(--vh) * 100);
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Layers */
+.layer{
+  position:absolute; inset:0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none; /* คลิกทะลุ */
+}
+.layer--bg{
+  background-image: var(--bg);
+  z-index: 0;
+}
+.layer--overlay{
+  background-color: black;
+  opacity: var(--overlay-opacity, 0.65);
+  z-index: 1;
+}
+
+/* Content */
+#stage-content{
+  position: relative; z-index: 2;
+  width: 100%; height: 100%;
+  display: grid;
+  place-items: center;
+  padding: var(--padY) var(--padX);
+}
+
+/* layout helpers */
+.center{ text-align: center; }
+.stack > * + *{ margin-top: 14px; }
+
+/* Typography */
+h1{ font-size: clamp(20px, 3.6vmin + 1.2vw, 36px); margin:0; }
+p{ margin:0; line-height: 1.6; }
+.tiny{ font-size: 12px; opacity: 0.9; }
+.text-muted{ color: var(--muted); }
+
+/* Field */
+.field{
+  width: min(92%, 420px);
+  margin: 10px auto 0;
+}
+label{ display:block; text-align: left; }
+input[type="text"]{
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  outline: none;
+}
+input::placeholder{ color: rgba(255,255,255,0.6); }
+input:focus{ border-color: rgba(255,255,255,0.4); }
+
+/* Button */
+.btn{
+  width: 100%;
+  padding: 12px 16px;
+  border: 0;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+}
+.btn:active{ transform: translateY(1px); }
+
+/* Error */
+.error{
+  min-height: 1.4em;
+  color: #ffb3b3;
+}
+
+/* Animations */
+.fade-in{
+  animation: fadeIn .8s ease both;
+}
+.fade-in-slow{
+  animation: fadeIn 1.4s ease both;
+}
+@keyframes fadeIn{
+  from{ opacity:0; transform: translateY(6px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* Utility fonts */
+.kanit-light{ font-weight: 300; }
+.kanit-medium{ font-weight: 500; }
+.kanit-semibold{ font-weight: 700; }
+
+/* iOS safe area padding (ถ้าต้องการ) */
+/*
+#stage-inner{ padding-bottom: env(safe-area-inset-bottom); }
+*/
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;   /* ครอบเต็มเฟรม */
+  background-position: center center; /* จัดกึ่งกลาง */
+  background-repeat: no-repeat;
+}
