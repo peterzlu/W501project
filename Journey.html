@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Journey — Where Is My Strength</title>
+  <link rel="stylesheet" href="/css/journeystyle.css" />
+  <script src="/vendor/howler.js/src/howler.core.js"></script>
+  <script src="/js/journey.js" defer></script>
+  <link rel="icon" type="image/x-icon" href="/assets/images/Photos/Logo.png">
+</head>
+<body>
+
+  <main id="stage">
+
+    <!-- ===================== Scene 0 : LOADER ===================== -->
+    <section class="loadingscene loader" id="scene0" style="--bg:#15193B">
+      <div id="loaderwrap" class="loader-wrap">
+        <div class="loader-title">กำลังดาวน์โหลด…</div>
+
+        <div class="progress">
+          <div class="bar" id="progressBar" style="width: 0%"></div>
+        </div>
+        <div class="percent"><span id="percentNum">0</span>%</div>
+        <div class="small"> เว็บไซต์นี้มีภาพประกอบและเสียง <br>
+                            หามุมสงบ ๆ และใส่หูฟัง <br> 
+                            เพื่อประสบการณ์ที่ดีที่สุด </div>
+        <a id="loaderStartBtn" class="next loadbtn" href="#scene1" onclick="scene01()"> START </a>
+      </div>
+    </section>
+
+    <!-- ===================== Scene 1 ===================== -->
+    <section class="scene" id="scene1" style="--bg:url('/assets/images/Photos/01.gif')">
+      <div class="content center">
+        <p id="message1" class="small message reveal">
+          ฉันชื่อ ‘ถุงกระดาษ’ <br> 
+          กำลังตามหา <span class="theword">‘ความแข็งแกร่ง’</span> ของฉันอยู่<br> 
+          เพราะฉันได้รับข้อความที่ขาดหายว่า...
+        </p>
+      </div>
+      <a id="btn1" class="next nextbtn buttonbelow" href="#scene2" onclick="scene02()"> NEXT </a>
+      <script>
+      function scene01() {
+        var msg = document.getElementById("message1");
+        var btn = document.getElementById("btn1")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+          setTimeout(() => {
+            btn.classList.remove("hidden")
+            btn.classList.add("fade-in")
+          }, 2000);
+        }, 2000);
+      }
+      </script>
+    </section>
+
+    <!-- ===================== Scene 2 ===================== -->
+    <section class="scene" id="scene2" style="--bg:url('/assets/images/Photos/02.gif')">
+      <div class="content center">
+        <p id="message2" class="small message reveal theword">
+        “ฉันอ่อนแอ_______ ฉัน______”</p>
+      </div>
+        <a id="btn2" href="#scene3" class="next nextbtn buttonbelow" onclick="scene03()">ต่อไป</a>
+
+      <script>
+      function scene02() {
+        glitch.play()
+        var msg = document.getElementById("message2");
+        var btn = document.getElementById("btn2")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+          setTimeout(() => {
+            btn.classList.remove("hidden")
+            btn.classList.add("fade-in")
+          }, 2000);
+        }, 750);
+      }
+      </script>
+        
+    </section>
+
+    <!-- ===================== Scene 3 ===================== -->
+    <section class="scene" id="scene3" style="--bg:url('/assets/images/Photos/01.gif')">
+      <div id="overlay1" class="overlay dim-50"></div>
+      <div class="content">
+        <p id="message3" class="small message reveal">
+          ถ้าฉันพบ <span class="theword">‘ความแข็งแกร่ง’ </span> ของฉัน<br>
+          ฉันอาจจะเข้าใจมากขึ้นก็ได้ว่า<br>
+          คำที่ขาดหายไปนั้นคืออะไร<br><br>
+          เราออกเดินทางเลยดีไหม?
+        </p>
+        <a id="btn3" href="#scene4" class="next nextbtn buttonbelow" onclick="scene04()">เริ่มออกเดินทาง</a>
+      </div>
+
+      <script>
+        function scene03() {
+        glitch.stop()
+        var overlay = document.getElementById("overlay1")
+        var msg = document.getElementById("message3");
+        var btn = document.getElementById("btn3")
+        overlay.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          overlay.classList.remove("hidden")
+          overlay.classList.add("fade-in")
+          setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+          }, 2000);
+
+          setTimeout(() => {
+            btn.classList.remove("hidden")
+            btn.classList.add("fade-in")
+          }, 2000);
+        }, 1000);
+      }
+      </script>
+    </section>
+
+<!-- ===================== Scene 4 ===================== -->
+    <section class="scene" id="scene4" style="--bg:url('/assets/images/Photos/04_1.gif')">
+      <div class="content">
+        <p id="message4" class="small message reveal">
+          ฉันออกเดินทาง <br>
+          และถาม 'สายลม' ว่า <br>
+          เธอรู้ไหมว่า <span class="theword">'ความแข็งแกร่ง' </span> <br>
+          ของฉันอยู่ที่ไหน? 
+        </p>
+        <a id="btn4" href="#scene5" class="next nextbtn buttonbelow" onclick="scene05()">เริ่มออกเดินทาง</a>
+      </div>
+
+      <script>
+        function scene04() {
+          wind.play()
+          wind.fade(0,0.75,3000)
+        var scene = document.getElementById("scene4")
+        var msg = document.getElementById("message4");
+        var btn = document.getElementById("btn4")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+          setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+          }, 2000);
+
+          setTimeout(() => {
+            btn.classList.remove("hidden")
+            btn.classList.add("fade-in")
+          }, 2000);
+        }, 1000);
+      }
+      </script>
+    </section>
+
+    <!-- ===================== Scene 5 ===================== -->
+    <section class="scene" id="scene5" style="--bg:url('/assets/images/Photos/04.gif')">
+      <div id="overlay2" class="overlay dim-50"></div>
+      <div class="content">
+        <p id="message5" class="small message reveal">
+          <span class="speaker">สายลมถามฉันกลับมาว่า: </span> <br>
+          "อะไรทำให้เธอมีความสุขที่สุดล่ะ?"
+        </p>
+      </div>
+        <div id="question1" class="center">
+          <a class="windanswer" href="#scene6" onclick="addScore('A1', 1); addScore('A2', 1); scene06()"> มิตรภาพที่ดี </a>
+          <a class="windanswer" href="#scene6" onclick="addScore('B1', 1); addScore('B2', 1); scene06()"> ความมั่นคงในชีวิต </a>
+          <a class="windanswer" href="#scene6" onclick="addScore('C1', 1); addScore('C2', 1); scene06()"> ความสำเร็จตามเป้าหมาย </a>
+          <a class="windanswer" href="#scene6" onclick="addScore('D1', 1); addScore('D2', 1); scene06()"> ความเรียบง่ายสงบสุข </a>
+        </div>
+
+      <script>
+        function scene05() {
+        var overlay = document.getElementById("overlay2")
+        var scene = document.getElementById("scene5")
+        var msg = document.getElementById("message5");
+        var btn = document.getElementById("question1")
+        scene.classList.add("hidden")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        overlay.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+        }, 1000);
+
+        setTimeout(() => {
+          overlay.classList.remove("hidden")
+          overlay.classList.add("fade-in")
+        }, 3000);
+
+        setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+        }, 4500);
+
+        setTimeout(() => {
+          btn.classList.remove("hidden")
+          btn.classList.add("fade-in")
+        }, 6000);
+      }
+      </script>
+    </section>
+
+ <!-- ===================== Scene 6 ===================== -->
+    <section class="scene" id="scene6" style="--bg:url('/assets/images/Photos/04.gif')">
+      <div id="overlay2" class="overlay dim-50"></div>
+      <div class="content">
+        <p id="message6" class="small message reveal">
+          <span class="speaker">สายลมถามฉันอีกครั้งว่า: </span> <br>
+          "อะไรคือสิ่งที่เธอ <br>
+          ปรารถนาให้เกิดขึ้นจริงในชีวิตล่ะ?"
+        </p>
+      </div>
+        <div id="question2" class="center">
+          <a class="windanswer2" href="#scene7" onclick="addScore('A1', 1); scene07()"> มีคนรักและยอมรับในตัวฉันมากมาย </a>
+          <a class="windanswer2" href="#scene7" onclick="addScore('B2', 1); scene07()"> ทำทุกอย่างให้ไร้ที่ติ/สมบูรณ์แบบที่สุด </a>
+          <a class="windanswer2" href="#scene7" onclick="addScore('C1', 1); scene07()"> สร้างการเปลี่ยนแปลงที่มีความหมายต่อโลก </a>
+          <a class="windanswer2" href="#scene7" onclick="addScore('D2', 1); scene07()"> ค้นพบความสงบสุขในจิตใจที่แท้จริง </a>
+        </div>
+
+      <script>
+        function scene06() {
+        var overlay = document.getElementById("overlay2")
+        var msg = document.getElementById("message6");
+        var btn = document.getElementById("question2")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+
+        setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+        }, 2000);
+
+        setTimeout(() => {
+          btn.classList.remove("hidden")
+          btn.classList.add("fade-in")
+        }, 4000);
+      }
+      </script>
+    </section>
+
+<!-- ===================== Scene 7 ===================== -->
+    <section class="scene" id="scene7" style="--bg:url('/assets/images/Photos/04_1.gif')">
+      <div class="content">
+        <p id="message7" class="small message reveal">
+          <span class="speaker"> สายลมพูดว่า: </span> <br>
+          อย่ามัวจดจ่อกับสายลมอยู่เลย <br>
+          แม้จะพัดความสุขและความปรารถนามาให้ <br>
+          แต่ก็จะจากไปอย่างรวดเร็ว <br> <br>
+
+          <span class="speaker"> </span> <br>
+          ถ้าเธอได้พบ <span class="theword">'ความแข็งแกร่ง'</span> ของเธอแล้ว <br>
+          'ฝน' จะตกลงมา...คอยสังเกตให้ดีนะ <br> <br>
+
+          <span class="speaker">'ฝน' ยังไม่ตก สายลมก็ลาจาก <br> และฉันก็เดินทางต่อไป... </span> 
+        </p>
+        <a id="btn7" href="#scene8" class="next nextbtn buttonbelow" onclick="scene08()">ต่อไป</a>
+      </div>
+
+      <script>
+        function scene07() {
+          wind.fade(0.75,0,5000)
+        var scene = document.getElementById("scene7")
+        var msg = document.getElementById("message7");
+        var btn = document.getElementById("btn7")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+          setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+          }, 2000);
+
+          setTimeout(() => {
+            btn.classList.remove("hidden")
+            btn.classList.add("fade-in")
+          }, 6000);
+        }, 1000);
+      }
+      </script>
+    </section>
+
+    <!-- ===================== Scene 8 ===================== -->
+    <section class="scene" id="scene8" style="--bg:url('/assets/images/Photos/05_1.gif')">
+      <div class="content">
+        <p id="message8" class="small message reveal">
+          ฉันเดินทางต่อไป <br>
+          และถาม 'หินผา' ว่า <br>
+          เธอรู้ไหมว่า <span class="theword">'ความแข็งแกร่ง' </span> <br>
+          ของฉันอยู่ที่ไหน? 
+        </p>
+        <a id="btn8" href="#scene9" class="next nextbtn buttonbelow" onclick="scene09()">ต่อไป</a>
+      </div>
+
+      <script>
+        function scene08() {
+          rock.play()
+          rock.fade(0,0.5,5000)
+        var scene = document.getElementById("scene8")
+        var msg = document.getElementById("message8");
+        var btn = document.getElementById("btn8")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+          setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+          }, 2000);
+
+          setTimeout(() => {
+            btn.classList.remove("hidden")
+            btn.classList.add("fade-in")
+          }, 5000);
+        }, 1000);
+      }
+      </script>
+    </section>
+
+    <!-- ===================== Scene 9 ===================== -->
+    <section class="scene" id="scene9" style="--bg:url('/assets/images/Photos/05.gif')">
+      <div id="overlay3" class="overlay dim-50"></div>
+      <div class="content">
+        <p id="message9" class="small message reveal">
+          <span class="speaker">หินผาส่งเสียงดังถามฉันว่า: </span> <br>
+          "มีของวิเศษชิ้นไหนที่อยากได้ไหม?"
+        </p>
+      </div>
+        <div id="question3" class="center">
+          <a class="rockanswer" href="#scene10" onclick="addScore('A1', 1); addScore('A2', 1); scene10()"> สร้อยคอเพชร: ทำให้ทุกคนรักและเมตตา </a>
+          <a class="rockanswer" href="#scene10" onclick="addScore('B1', 1); addScore('B2', 1); scene10()"> สมุดหินผา: บันทึกสิ่งใดก็สำเร็จ </a>
+          <a class="rockanswer" href="#scene10" onclick="addScore('C1', 1); addScore('C2', 1); scene10()"> แหวนศิลา: สวมใส่แล้วอ่านใจคนอื่นได้ </a>
+          <a class="rockanswer" href="#scene10" onclick="addScore('D1', 1); addScore('D2', 1); scene10()"> ขวดน้ำค้าง: ดื่มเพื่อลบล้างความทุกข์ทั้งหมด </a>
+        </div>
+
+      <script>
+        function scene09() {
+        var overlay = document.getElementById("overlay3")
+        var scene = document.getElementById("scene9")
+        var msg = document.getElementById("message9");
+        var btn = document.getElementById("question3")
+        scene.classList.add("hidden")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        overlay.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+        }, 1000);
+
+        setTimeout(() => {
+          overlay.classList.remove("hidden")
+          overlay.classList.add("fade-in")
+        }, 3000);
+
+        setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+        }, 4500);
+
+        setTimeout(() => {
+          btn.classList.remove("hidden")
+          btn.classList.add("fade-in")
+        }, 6000);
+      }
+      </script>
+    </section>
+
+    <!-- ===================== Scene 10 ===================== -->
+    <section class="scene" id="scene10" style="--bg:url('/assets/images/Photos/05_1.gif')">
+      <div class="content">
+        <p id="message10" class="small message reveal">
+          <span class="speaker"> หินผาพูดว่า: </span> <br>
+          มนุษย์แสวงหาสิ่งที่จะมาเติมเต็มเขาได้... <br>
+          แต่ใครเล่าจะรู้...ว่าการตามหาสิ่งนั้น <br>
+          พวกเขาต้องแตกสลายขนาดไหน <br> <br>
+
+          หินผาอย่างเรายังต้องหยุดพัก <br>
+          หินผา...ก็เหนื่อยเป็นเหมือนกัน...<br> <br>
+
+          <span class="speaker">'ฝน' ยังไม่ตก หินผาก็ลาจาก <br> และฉันก็เดินทางต่อไป... </span> 
+        </p>
+        <a id="btn10" href="#scene11" class="next nextbtn buttonbelow" onclick="scene11()">ต่อไป</a>
+      </div>
+
+      <script>
+        function scene10() {
+          rock.play()
+          rock.fade(0,0.5,5000)
+
+        var scene = document.getElementById("scene10")
+        var msg = document.getElementById("message10");
+        var btn = document.getElementById("btn10")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+          setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+          }, 2000);
+
+          setTimeout(() => {
+            btn.classList.remove("hidden")
+            btn.classList.add("fade-in")
+          }, 6000);
+        }, 1000);
+      }
+      </script>
+    </section>
+
+        <!-- ===================== Scene 11 ===================== -->
+    <section class="scene" id="scene11" style="--bg:url('/assets/images/Photos/06_1.gif')">
+      <div class="overlay dim-25"></div>
+      <div class="content">
+        <p id="message11" class="small message reveal">
+          ฉันเดินทางต่อไปอีก <br>
+          และถาม 'ดงหนาม' ว่า <br>
+          เธอรู้ไหมว่า <span class="theword">'ความแข็งแกร่ง' </span> <br>
+          ของฉันอยู่ที่ไหน? 
+        </p>
+        <a id="btn11" href="#scene12" class="next nextbtn buttonbelow" onclick="scene12()">ต่อไป</a>
+      </div>
+
+      <script>
+        function scene11() {
+          thorn.play()
+          thorn.fade(0,0.5,5000)
+        var scene = document.getElementById("scene11")
+        var msg = document.getElementById("message11");
+        var btn = document.getElementById("btn11")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+          setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+          }, 2000);
+
+          setTimeout(() => {
+            btn.classList.remove("hidden")
+            btn.classList.add("fade-in")
+          }, 5000);
+        }, 1000);
+      }
+      </script>
+    </section>
+
+    <!-- ===================== Scene 12 ===================== -->
+    <section class="scene" id="scene12" style="--bg:url('/assets/images/Photos/06.gif')">
+      <div id="overlay4" class="overlay dim-25"></div>
+      <div class="content">
+        <p id="message12" class="small message reveal">
+          <span class="speaker">ดงหนามถามฉันด้วยเสียงที่เฉยชา: </span> <br>
+          คุณรู้สึก 'อ่อนแอ' ที่สุดเมื่อใด?
+        </p>
+      </div>
+        <div id="question4" class="center">
+          <a class="thornanswer" href="#scene13" onclick="addScore('A2', 1); scene13()"> เมื่อทำให้คนอื่นผิดหวัง </a>
+          <a class="thornanswer" href="#scene13" onclick="addScore('B1', 1); scene13()"> เมื่อทุกอย่างไม่เป็นไปตามที่วางแผนไว้ </a>
+          <a class="thornanswer" href="#scene13" onclick="addScore('C2', 1); scene13()"> เมื่อรู้สึกไร้ความสามารถ </a>
+          <a class="thornanswer" href="#scene13" onclick="addScore('D1', 1); scene13()"> เมื่อใจพร้อม แต่ร่างกายไม่เอื้ออำนวย </a>
+        </div>
+
+      <script>
+        function scene12() {
+        var overlay = document.getElementById("overlay4")
+        var scene = document.getElementById("scene12")
+        var msg = document.getElementById("message12");
+        var btn = document.getElementById("question4")
+        scene.classList.add("hidden")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        overlay.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+        }, 1000);
+
+        setTimeout(() => {
+          overlay.classList.remove("hidden")
+          overlay.classList.add("fade-in")
+        }, 3000);
+
+        setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+        }, 4500);
+
+        setTimeout(() => {
+          btn.classList.remove("hidden")
+          btn.classList.add("fade-in")
+        }, 6000);
+      }
+      </script>
+    </section>
+
+     <!-- ===================== Scene 13 ===================== -->
+    <section class="scene" id="scene13" style="--bg:url('/assets/images/Photos/06.gif')">
+      <div id="overlay4" class="overlay dim-25"></div>
+      <div class="content">
+        <p id="message13" class="small message reveal">
+          <span class="speaker">ดงหนาม: </span> <br>
+          คุณคิดว่า <span class="theword">'ความแข็งแกร่ง'</span> คืออะไรกันแน่?
+        </p>
+      </div>
+        <div id="question5" class="center">
+          <a class="thornanswer" href="#scene14" onclick="addScore('A1', 1); scene14()"> การเข้าใจและเห็นอกเห็นใจผู้อื่น </a>
+          <a class="thornanswer" href="#scene14" onclick="addScore('B2', 1); scene14()"> การมุ่งมั่นสร้างสรรค์สิ่งต่าง ๆ ให้ไร้ที่ติ </a>
+          <a class="thornanswer" href="#scene14" onclick="addScore('C1', 1); scene14()"> การมีเป้าหมายและแรงผลักดันอันแน่วแน่ </a>
+          <a class="thornanswer" href="#scene14" onclick="addScore('D2', 1); scene14()"> การรักษาความใจเย็นและสงบนิ่งได้เสมอ </a>
+        </div>
+
+      <script>
+        function scene13() {
+        var msg = document.getElementById("message13");
+        var btn = document.getElementById("question5")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+
+        setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+        }, 2000);
+
+        setTimeout(() => {
+          btn.classList.remove("hidden")
+          btn.classList.add("fade-in")
+        }, 4000);
+      }
+      </script>
+    </section>
+
+        <!-- ===================== Scene 14 ===================== -->
+    <section class="scene" id="scene14" style="--bg:url('/assets/images/Photos/06_1.gif')">
+      <div class="content">
+        <p id="message14" class="small message reveal">
+          <span class="speaker"> ดงหนามส่งเสียง: </span> <br>
+          มนุษย์อยากใช้ชีวิตแบบไร้ซึ่งความอ่อนแอ... <br>
+          พวกเขาอยากจะเอาหนามในใจออกไปให้หมด <br> <br>
+
+          แต่ยิ่งปิดบังไว้ก็ยิ่งเจ็บปวด... <br>
+          เขาจะทนไปอีกนานสักแค่ไหนกัน?<br> <br>
+
+          <span class="speaker">'ฝน' ยังไม่ตก ดงหนามก็ลาจาก <br> และฉันก็เดินทางต่อไป... </span> 
+        </p>
+        <a id="btn14" href="#scene15" class="next nextbtn buttonbelow" onclick="scene15()">ต่อไป</a>
+      </div>
+
+      <script>
+        function scene14() {
+        var scene = document.getElementById("scene14")
+        var msg = document.getElementById("message14");
+        var btn = document.getElementById("btn14")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+          setTimeout(() => {
+          msg.classList.remove("hidden")
+          msg.classList.add("fade-in")
+          }, 2000);
+
+          setTimeout(() => {
+            btn.classList.remove("hidden")
+            btn.classList.add("fade-in")
+          }, 6000);
+        }, 1000);
+      }
+      </script>
+    </section>
+
+        <!-- ===================== Scene 15 ===================== -->
+    <section class="scene" id="scene15" style="--bg:url('/assets/images/Photos/07.gif')">
+      <div class="content center">
+        <p id="message15" class="small message reveal">
+        ฉันหยุดพักจากการเดินทางที่ยาวนาน <br>
+        และถามกับตัวเองว่า...
+        <span class="theword">'ความแข็งแกร่ง'</span> <br>
+        ของฉันอยู่ที่ไหนกันแน่นะ...
+      </p>
+
+      <p id="message15-1" class="small message reveal">
+        ฉันยังตอบคำถามนั้นไม่ได้เลย...<br>
+        หรือว่าฉันอ่อนแอจริง ๆ...
+      </p>
+
+      </div>
+        <a id="btn15" href="#scene16" class="next nextbtn buttonbelow" onclick="scene16()">ต่อไป</a>
+
+      <script>
+      function scene15() {
+        thorn.stop()
+        var scene = document.getElementById("scene15")
+        var msg = document.getElementById("message15");
+        var msg2 = document.getElementById("message15-1");
+        var btn = document.getElementById("btn15")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        msg2.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+        scene.classList.remove("hidden")
+        scene.classList.add("fade-in")
+        }, 500);
+        setTimeout(() => {
+        msg.classList.remove("hidden")
+        msg.classList.add("fade-in")
+        }, 4000);
+        setTimeout(() => {
+        msg2.classList.remove("hidden")
+        msg2.classList.add("fade-in")
+        }, 6000);
+         setTimeout(() => {
+        btn.classList.remove("hidden")
+        btn.classList.add("fade-in")
+        }, 8000);
+      }
+      </script>  
+    </section>
+
+     <!-- ===================== Scene 16 ===================== -->
+    <section class="scene" id="scene16" style="--bg:url('/assets/images/Photos/09.gif')">
+      <div class="content center">
+        <p id="message16" class="small message reveal">
+        <span class="speaker"> ชายปริศนาคนหนึ่ง เดินเข้ามาคุยกับฉัน... </span> <br>
+        <span id="message16-1" class="theword">เธอรู้สึกว่าชีวิตในตอนนี้ 'ขาด' อะไรหรอ?</span>
+      </p>
+      </div>
+         <div id="question6" class="center">
+          <a class="mananswer" href="#scene17" onclick="addScore('A2', 1); scene17()"> ขาดคนที่จะยอมรับในตัวฉันอย่างแท้จริง </a>
+          <a class="mananswer" href="#scene17" onclick="addScore('B1', 1); scene17()"> ขาดความมั่นคงและชีวิตที่ลงตัวเป็นหลักแหล่ง </a>
+          <a class="mananswer" href="#scene17" onclick="addScore('C2', 1); scene17()"> ขาดสิ่งใหม่/ขาดการเปลี่ยนแปลงที่สำคัญ </a>
+          <a class="mananswer" href="#scene17" onclick="addScore('D1', 1); scene17()"> ขาดความตื่นเต้นรื่นเริง </a>
+        </div>
+      <script>
+      function scene16() {
+        var scene = document.getElementById("scene16")
+        var msg = document.getElementById("message16");
+        var msg2 = document.getElementById("message16-1");
+        var btn = document.getElementById("question6")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        msg2.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+        scene.classList.remove("hidden")
+        scene.classList.add("fade-in")
+        }, 250);
+        setTimeout(() => {
+        msg.classList.remove("hidden")
+        msg.classList.add("fade-in")
+        }, 2000);
+        setTimeout(() => {
+        msg2.classList.remove("hidden")
+        msg2.classList.add("fade-in")
+        }, 4000);
+         setTimeout(() => {
+        btn.classList.remove("hidden")
+        btn.classList.add("fade-in")
+        }, 7000);
+      }
+      </script>  
+    </section>
+
+    <!-- ===================== Scene 17 ===================== -->
+    <section class="scene" id="scene17" style="--bg:url('/assets/images/Photos/08.jpg')">
+      <div class="overlay dim-25"></div>
+      <div class="content center">
+        <p id="message17" class="small message reveal">
+        <span class="speaker"> ชายปริศนา: </span> <br>
+        <span class="theword">ในชีวิตของเธออะไรคือ 'คุณค่า' <br>
+        ที่สำคัญที่สุดล่ะ?</span>
+      </p>
+      </div>
+         <div id="question7" class="center">
+          <a class="mananswer" href="#scene18A" onclick="addScore('A1', 1);addScore('A2', 1); scene18A()"> ผู้คน (ความสัมพันธ์) </a>
+          <a class="mananswer" href="#scene18B" onclick="addScore('B1', 1);addScore('B2', 1); scene18B()"> แผนการ (การจัดการ/ความเป็นระเบียบ) </a>
+          <a class="mananswer" href="#scene18C" onclick="addScore('C1', 1);addScore('C2', 1); scene18C()"> อุดมการณ์ (หลักการ/ความเชื่อ) </a>
+          <a class="mananswer" href="#scene18D" onclick="addScore('D1', 1);addScore('D2', 1); scene18D()"> ความสุข (ความพึงพอใจในชีวิต) </a>
+        </div>
+      <script>
+      function scene17() {
+        var scene = document.getElementById("scene17")
+        var msg = document.getElementById("message17");
+        var btn = document.getElementById("question7")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+        scene.classList.remove("hidden")
+        scene.classList.add("fade-in")
+        }, 500);
+        setTimeout(() => {
+        msg.classList.remove("hidden")
+        msg.classList.add("fade-in")
+        }, 2000);
+         setTimeout(() => {
+        btn.classList.remove("hidden")
+        btn.classList.add("fade-in")
+        }, 4000);
+      }
+      </script>  
+    </section>
+
+    <!-- ===================== Scene 18A ===================== -->
+    <section class="scene" id="scene18A" style="--bg:url('/assets/images/Photos/10.gif')">
+      <div class="overlay dim-25"></div>
+      <div class="content center">
+        <p id="message18A" class="small message reveal">
+        <span class="speaker"> ชายปริศนา: </span> <br>
+        <span class="theword">เธอเลือก 'ผู้คน' เป็นสิ่งสำคัญที่สุด <br>
+          เธอหมายถึงใครระหว่าง? </span>
+      </p>
+      </div>
+         <div id="question8A" class="center">
+          <a class="lastanswer" href="#scene19" onclick="addScore('A1', 1); scene19()"> เพื่อนฝูงและสังคมที่อยู่ร่วมกัน </a>
+          <a class="lastanswer" href="#scene19" onclick="addScore('A2', 1); scene19()"> ครอบครัวและคนที่คุณรัก </a>
+        </div>
+      <script>
+      function scene18A() {
+        var scene = document.getElementById("scene18A")
+        var msg = document.getElementById("message18A");
+        var btn = document.getElementById("question8A")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+        scene.classList.remove("hidden")
+        scene.classList.add("fade-in")
+        }, 500);
+        setTimeout(() => {
+        msg.classList.remove("hidden")
+        msg.classList.add("fade-in")
+        }, 2000);
+         setTimeout(() => {
+        btn.classList.remove("hidden")
+        btn.classList.add("fade-in")
+        }, 4000);
+      }
+      </script>  
+    </section>
+
+    <!-- ===================== Scene 18B ===================== -->
+    <section class="scene" id="scene18B" style="--bg:url('/assets/images/Photos/10.gif')">
+      <div class="overlay dim-25"></div>
+      <div class="content center">
+        <p id="message18B" class="small message reveal">
+        <span class="speaker"> ชายปริศนา: </span> <br>
+        <span class="theword">เธอให้คุณค่ากับ'แผนการ'มากที่สุด  <br>
+          เธอหมายถึงการวางแผนในลักษณะใด? </span>
+      </p>
+      </div>
+         <div id="question8B" class="center">
+          <a class="lastanswer" href="#scene19"onclick="addScore('B1', 1); scene19()"> แผนการที่ช่วยให้ฉันควบคุม <br> และสร้างความมั่นคงในชีวิตได้ </a>
+          <a class="lastanswer" href="#scene19"onclick="addScore('B2', 1); scene19()"> แผนการที่นำไปสู่ผลลัพธ์ <br> ที่สมบูรณ์แบบไร้ข้อผิดพลาด </a>
+        </div>
+      <script>
+      function scene18B() {
+        var scene = document.getElementById("scene18B")
+        var msg = document.getElementById("message18B");
+        var btn = document.getElementById("question8B")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+        scene.classList.remove("hidden")
+        scene.classList.add("fade-in")
+        }, 500);
+        setTimeout(() => {
+        msg.classList.remove("hidden")
+        msg.classList.add("fade-in")
+        }, 2000);
+         setTimeout(() => {
+        btn.classList.remove("hidden")
+        btn.classList.add("fade-in")
+        }, 4000);
+      }
+      </script>  
+    </section>
+
+    <!-- ===================== Scene 18C ===================== -->
+    <section class="scene" id="scene18C" style="--bg:url('/assets/images/Photos/10.gif')">
+      <div class="overlay dim-25"></div>
+      <div class="content center">
+        <p id="message18C" class="small message reveal">
+        <span class="speaker"> ชายปริศนา: </span> <br>
+        <span class="theword">เธอเลือก 'อุดมการณ์' เป็นสิ่งสำคัญที่สุด 
+          เธอมีจุดมุ่งหมายหลักในเรื่องอะไร? </span>
+      </p>
+      </div>
+         <div id="question8C" class="center">
+          <a class="lastanswer" href="#scene19" onclick="addScore('C1', 1); scene19()"> อุดมการณ์เพื่อเปลี่ยนแปลงสังคม <br> ประเทศชาติ หรือโลกใบนี้ </a>
+          <a class="lastanswer" href="#scene19" onclick="addScore('C2', 1); scene19()"> อุดมการณ์เพื่อการเปลี่ยนแปลง <br> ที่ดีในชีวิตรอบตัว </a>
+        </div>
+      <script>
+      function scene18C() {
+        var scene = document.getElementById("scene18C")
+        var msg = document.getElementById("message18C");
+        var btn = document.getElementById("question8C")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+        scene.classList.remove("hidden")
+        scene.classList.add("fade-in")
+        }, 500);
+        setTimeout(() => {
+        msg.classList.remove("hidden")
+        msg.classList.add("fade-in")
+        }, 2000);
+         setTimeout(() => {
+        btn.classList.remove("hidden")
+        btn.classList.add("fade-in")
+        }, 4000);
+      }
+      </script>  
+    </section>
+
+    <!-- ===================== Scene 18D ===================== -->
+    <section class="scene" id="scene18D" style="--bg:url('/assets/images/Photos/10.gif')">
+      <div class="overlay dim-25"></div>
+      <div class="content center">
+        <p id="message18D" class="small message reveal">
+        <span class="speaker"> ชายปริศนา: </span> <br>
+        <span class="theword"> เธอเลือก 'ความสุข' เป็นคุณค่าสำคัญที่สุด 
+          เธอหมายถึงความสุขในลักษณะไหนล่ะ? </span>
+      </p>
+      </div>
+         <div id="question8D" class="center">
+          <a class="lastanswer" href="#scene19" onclick="addScore('D1', 1); scene19()"> ความสุขทางกาย: เช่น ความมั่งคั่ง <br> และสามารถครอบครองทุกสิ่งที่ต้องการ </a>
+          <a class="lastanswer" href="#scene19" onclick="addScore('D2', 1); scene19()"> ความสุขทางใจ: เช่น ความสงบในจิตใจ <br> หรือความพึงพอใจจากภายใน </a>
+        </div>
+      <script>
+      function scene18D() {
+        var scene = document.getElementById("scene18D")
+        var msg = document.getElementById("message18D");
+        var btn = document.getElementById("question8D")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+        scene.classList.remove("hidden")
+        scene.classList.add("fade-in")
+        }, 500);
+        setTimeout(() => {
+        msg.classList.remove("hidden")
+        msg.classList.add("fade-in")
+        }, 2000);
+         setTimeout(() => {
+        btn.classList.remove("hidden")
+        btn.classList.add("fade-in")
+        }, 4000);
+      }
+      </script>  
+    </section>
+
+  <!-- ===================== Scene 19 ===================== -->
+    <section class="scene" id="scene19" style="--bg:url('/assets/images/Photos/10.gif')">
+      <div id="overlay5" class="overlay dim-50"></div>
+      <div class="content center">
+      <p id="message19" class="small message reveal theword">
+        <span class="speaker"> ชายปริศนา: </span> <br>
+                เดินทางหาความแข็งแกร่งมายาวนาน <br>
+                คงจะเหนื่อยน่าดูเลยนะ...'<span id="name" data-name></span>' <br> <br>
+            <span id="message19-1">
+              เธอคงค้นพบแล้วว่า... <br>
+              ยิ่งค้นหา 'ความแข็งแกร่ง' <br>
+              ก็ยิ่งเห็น 'ความอ่อนแอ' ของตัวเอง
+            </span> <br> <br>
+
+            <span id="message19-2">
+              คำตอบของประโยคที่หายไป <br>
+              “ฉันอ่อนแอ_______ ฉัน______” <br>
+              เธอพร้อมจะฟังมันหรือเปล่า?
+            </span>
+      </p>
+      </div>
+        <a id="btn19" href="#scene20" class="next nextbtn buttonbelow" onclick="scene20()">ต่อไป</a>
+      <script>
+      function scene19() {
+        document.getElementById("name").innerText = localStorage.getItem('name');
+        var overlay = document.getElementById("overlay5")
+        var msg = document.getElementById("message19");
+        var msg1 = document.getElementById("message19-1");
+        var msg2 = document.getElementById("message19-2");
+        var btn = document.getElementById("btn19")
+        overlay.classList.add("hidden")
+        msg.classList.add("hidden")
+        msg1.classList.add("hidden")
+        msg2.classList.add("hidden")
+        btn.classList.add("hidden")
+
+        setTimeout(() => {
+        overlay.classList.remove("hidden")
+        overlay.classList.add("fade-in")
+        }, 1000);
+        setTimeout(() => {
+        msg.classList.remove("hidden")
+        msg.classList.add("fade-in")
+        }, 3000);
+        setTimeout(() => {
+        msg1.classList.remove("hidden")
+        msg1.classList.add("fade-in")
+        }, 6000);
+        setTimeout(() => {
+          bgm.fade(0.35,0,3000)
+          glitch.play()
+        msg2.classList.remove("hidden")
+        msg2.classList.add("fade-in")
+        }, 9000);
+         setTimeout(() => {
+        btn.classList.remove("hidden")
+        btn.classList.add("fade-in")
+        }, 12000);
+      }
+      </script>  
+    </section>
+
+      <!-- ===================== Scene 20 ===================== -->
+    <section class="scene" id="scene20" style="--bg:#15193B">
+      <div class="content center">
+      <p id="message20" class="small message reveal theword">
+        <span class="speaker"> ชายปริศนา: </span> <br>
+        “ฉันอ่อนแอ<span id="blank1">______</span> <br> 
+        ฉัน<span id="blank2">________________</span>” <br>
+      </p>
+      </div>
+        <a id="btn20" class="next nextbtn buttonbelow" onclick="ResultPortal()">ต่อไป</a>
+      <script>
+      function scene20() {
+        var scene = document.getElementById("scene20")
+        var msg = document.getElementById("message20");
+        var btn = document.getElementById("btn20")
+        var blank1 = document.getElementById("blank1")
+        var blank2 = document.getElementById("blank2")
+        scene.classList.add("hidden")
+        msg.classList.add("hidden")
+        btn.classList.add("hidden")
+        setTimeout(() => {
+          scene.classList.remove("hidden")
+          scene.classList.add("fade-in")
+        }, 1000);
+        setTimeout(() => {
+        msg.classList.remove("hidden")
+        msg.classList.add("fade-in")
+        }, 2000);
+        
+        setTimeout(() => {
+          blank1.classList.add("fade-in")
+          blank1.textContent = "เมื่อใด";
+        }, 4000);
+
+        setTimeout(() => {
+          glitch.fade(0.5,0,3000)
+          blank2.classList.add("fade-in")
+          blank2.textContent = "ก็เข้มแข็งเมื่อนั้น";
+        }, 6000);
+
+         setTimeout(() => {
+        btn.classList.remove("hidden")
+        btn.classList.add("fade-in")
+        }, 8000);
+      }
+      </script>  
+    </section>
+
+    <script>
+      function ResultPortal() {
+  // ฟังก์ชันสรุปผล ---------------------------------------------------------------------
+  let maxVar = null;
+  let maxScore = -Infinity;
+  for (let v in scores){
+    if (scores[v] > maxScore){
+      maxScore = scores[v];
+      maxVar = v;
+    }
+  }
+
+  const result = `ผลลัพธ์: ${maxVar} ได้ ${maxScore} คะแนนสูงสุด`;
+  console.log(result);
+if(maxVar === 'A1'){
+    window.location.href = 'pages/resultA1.html';
+  } else if(maxVar === 'A2'){
+    window.location.href = 'pages/resultA2.html';
+  } else if(maxVar === 'B1'){
+    window.location.href = 'pages/resultB1.html';
+  } else if(maxVar === 'B2'){
+    window.location.href = 'pages/resultB2.html';
+  } else if(maxVar === 'C1'){
+    window.location.href = 'pages/resultC1.html';
+  } else if(maxVar === 'C2'){
+    window.location.href = 'pages/resultC2.html';
+  } else if(maxVar === 'D1'){
+    window.location.href = 'pages/resultD1.html';
+  } else if(maxVar === 'D2'){
+    window.location.href = 'pages/resultD2.html';
+  } else {
+    alert('ไม่พบผลลัพธ์ที่ตรงกัน');
+  }
+
+
+}
+    </script>
+
+
+
+    <!-- เพิ่ม scene ถัด ๆ ไปต่อท้ายได้เลย -->
+  </main>
+
+
+</body>
+</html>
