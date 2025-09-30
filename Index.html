@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Where Is My Strength — Start</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/Photos/Logo.png">
+  <!-- Script เฉพาะหน้า index -->
+  <script src="/js/index.js" defer></script>
+</head>
+
+<body data-page="start">
+    <style>
+        html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: black; /* กันกรณีภาพโหลดไม่ทัน */
+}
+
+/* เวที (stage) ล็อกสัดส่วน 9:16 */
+#stage {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black; /* เผื่อกันขอบ */
+}
+
+#stage-inner {
+  position: relative;
+  height: 100vh; /* เต็มจอแนวตั้ง */
+  width: calc(100vh * 9 / 16); /* คำนวณอัตโนมัติ */
+  max-width: 100vw; /* ไม่ให้เกินจอแคบ */
+  overflow: hidden;
+  border-radius: 0;
+}
+
+/* พื้นหลัง */
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/backgrounds/index-bg.jpg');
+  background-size: cover;     /* ปรับให้เต็ม */
+  background-position: center; /* จัดให้อยู่ตรงกลาง */
+  background-repeat: no-repeat;
+}
+    </style>
+
+  <div id="stage">
+    <div id="stage-inner" aria-label="Portrait canvas locked 9:16">
+      <!-- เลเยอร์พื้นหลัง -->
+      <div class="layer layer--bg"
+           style="--bg:url('/assets/images/Photos/00_cover.jpg')"></div>
+        <!-- เลเยอร์สกริม/กรอบ (ถ้าอยากใช้ png กรอบข้อความ) -->
+      <div class="layer layer--overlay"></div>
+      <!-- คอนเทนต์ -->
+      <div id="stage-content">
+        <div class="center stack">
+          <h1 class="kanit-semibold fade-in">Where is my Strength...?</h1>
+          <p class="kanit-light fade-in-slow text-muted">
+            ขอเวลา 5 – 10 นาที <br>
+            หาที่เงียบสงบ ใส่หูฟัง<br/> แล้วมาสำรวจหัวใจของคุณกัน 
+          </p>
+
+          <form id="form" class="stack field" novalidate>
+            <label for="nickname" class="kanit-medium">ชื่อเล่น</label>
+            <input id="nickname" name="nickname" type="text" class="kanit-light center"
+                   inputmode="text" autocomplete="off" autocapitalize="words"
+                   maxlength="30" placeholder="ใส่ชื่อเล่นของคุณ"
+                   aria-describedby="errorMsg" />
+
+            <p id="errorMsg" class="error kanit-light" role="alert" aria-live="polite"></p>
+
+            <button id="nextBtn" class="btn kanit-semibold" type="submit" aria-label="ไปหน้าถัดไป">
+              ต่อไป
+            </button>
+          </form>
+
+          <p class="kanit-light tiny text-muted fade-in">
+            แบบทดสอบเพื่อความบันเทิงเท่านั้น <br>
+            ไม่ใช่แบบทดสอบทางจิตวิทยา
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <noscript>กรุณาเปิดใช้งาน JavaScript</noscript>
+</body>
+</html>
