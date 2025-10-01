@@ -434,7 +434,7 @@ document.getElementById('btnDownload').addEventListener('click', () => {
     const btnShare = document.getElementById('btnShare');
     if (btnShare) {
       btnShare.addEventListener('click', async () => {
-        const url = '/Index.html';
+        const url = '/index.html';
         if (navigator.share) {
           try { await navigator.share({ title: document.title, text: 'ดูผลลัพธ์ของฉัน', url }); }
           catch (_) {}
@@ -456,7 +456,7 @@ document.getElementById('btnDownload').addEventListener('click', () => {
       btnReplay.addEventListener('click', () => {
         // ล้างคะแนน/ชื่อถ้าต้องการ
         // localStorage.removeItem('playerName'); // ตัวอย่าง
-        window.location.href = '/Index.html';   // หรือ 'Index.html' ถ้ารันใต้ subfolder
+        window.location.href = '/index.html';   // หรือ 'Index.html' ถ้ารันใต้ subfolder
       });
     }
   });
