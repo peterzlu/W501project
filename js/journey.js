@@ -33,57 +33,57 @@ function addScore(variable, point) {
 /* ---------- รายการไฟล์ที่จะโหลด (แก้ไขได้ง่าย) ---------- */
 const ASSETS = {
   images: [
-    '/assets/images/Photos/01.gif',
-    '/assets/images/Photos/02.gif',
-    '/assets/images/Photos/03.jpg',
-    '/assets/images/Photos/04_1.gif',
-    '/assets/images/Photos/04.gif',
-    '/assets/images/Photos/05_1.gif',
-    '/assets/images/Photos/05.gif',
-    '/assets/images/Photos/06_1.gif',
-    '/assets/images/Photos/06.gif',
-    '/assets/images/Photos/07.gif',
-    '/assets/images/Photos/08.jpg',
-    '/assets/images/Photos/09.gif',
-    '/assets/images/Photos/10.gif',
-    '/assets/images/Photos/11.jpg',
-    '/assets/images/Photos/messageblack.png',
-    '/assets/images/Photos/Overlaybetween-01.png'
+    'assets/images/Photos/01.gif',
+    'assets/images/Photos/02.gif',
+    'assets/images/Photos/03.jpg',
+    'assets/images/Photos/04_1.gif',
+    'assets/images/Photos/04.gif',
+    'assets/images/Photos/05_1.gif',
+    'assets/images/Photos/05.gif',
+    'assets/images/Photos/06_1.gif',
+    'assets/images/Photos/06.gif',
+    'assets/images/Photos/07.gif',
+    'assets/images/Photos/08.jpg',
+    'assets/images/Photos/09.gif',
+    'assets/images/Photos/10.gif',
+    'assets/images/Photos/11.jpg',
+    'assets/images/Photos/messageblack.png',
+    'assets/images/Photos/Overlaybetween-01.png'
   ],
   audio: [
-    '/assets/audio/BGM/ดาดฟ้า.wav',
-    '/assets/audio/BGM/Effects/Glitch.mp3',
-    '/assets/audio/BGM/Effects/Rock.mp3',
-    '/assets/audio/BGM/Effects/Thorns.mp3',
-    '/assets/audio/BGM/Effects/Wind.mp3',
+    'assets/audio/BGM/ดาดฟ้า.wav',
+    'assets/audio/BGM/Effects/Glitch.mp3',
+    'assets/audio/BGM/Effects/Rock.mp3',
+    'assets/audio/BGM/Effects/Thorns.mp3',
+    'assets/audio/BGM/Effects/Wind.mp3',
   ]
 };
 
 const bgm = new Howl({
-  src:['/assets/audio/BGM/ดาดฟ้า.wav'],
+  src:['assets/audio/BGM/ดาดฟ้า.wav'],
   volume:0.5,
   loop: true
 })
 
 const glitch = new Howl({
-  src:['/assets/audio/BGM/Effects/Glitch.mp3'],
+  src:['assets/audio/BGM/Effects/Glitch.mp3'],
   volume:0.5,
   loop: true
 })
 
 const wind = new Howl({
-  src:['/assets/audio/BGM/Effects/Wind.mp3'],
+  src:['assets/audio/BGM/Effects/Wind.mp3'],
   volume:0,
   loop: true
 })
 
 const rock = new Howl({
-  src:['/assets/audio/BGM/Effects/Rock.mp3'],
+  src:['assets/audio/BGM/Effects/Rock.mp3'],
   volume:0,
 })
 
 const thorn = new Howl({
-  src:['/assets/audio/BGM/Effects/Thorns.mp3'],
+  src:['assets/audio/BGM/Effects/Thorns.mp3'],
   volume:0,
   loop: true
 })
@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // ปล่อยให้ <a href="#scene1"> ทำหน้าที่เลื่อนไปฉาก 1 เอง (ไม่ต้อง .click() ซ้ำ)
   }, { once: true });
 });
+
 
 
 
