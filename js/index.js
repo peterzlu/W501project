@@ -55,8 +55,9 @@
   // เก็บชื่อไว้ใน sessionStorage
 
   // ไปยังหน้า Journey
-  window.location.href = "journey.html";
+  window.location.href = "Journey.html";
 });
 
   });
 })();
+
