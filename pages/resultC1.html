@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Journey — Where Is My Strength</title>
-  <link rel="stylesheet" href="/css/resultstyle.css" />
-  <script src="/vendor/howler.js/src/howler.core.js"></script>
-  <script src="/js/Result.js" defer></script>
-  <link rel="icon" type="image/x-icon" href="/assets/images/Photos/Logo.png">
+  <link rel="stylesheet" href="css/resultstyle.css" />
+  <script src="vendor/howler.js/src/howler.core.js"></script>
+  <script src="js/Result.js" defer></script>
+  <link rel="icon" type="image/x-icon" href="assets/images/Photos/Logo.png">
 </head>
 <body>
 
@@ -28,7 +28,7 @@
       </div>
     </section>
     <!-- ===================== Scene 1 ===================== -->
-    <section class="scene" id="scene1" style="--bg:url('/assets/images/Photos/12.gif')">
+    <section class="scene" id="scene1" style="--bg:url('assets/images/Photos/12.gif')">
       <div class="content center">
         <p id="message1" class="small message reveal">
           และแล้ว...หยดฝนก็ร่วงหล่นจากฟ้า...<br>
@@ -70,7 +70,7 @@ setTimeout(() => {
     </section>
 
     <!-- ===================== Scene 2 ===================== -->
-    <section class="scene" id="scene2" style="--bg:url('/assets/images/Photos/13.gif')">
+    <section class="scene" id="scene2" style="--bg:url('assets/images/Photos/13.gif')">
     <div id="overlay1" class="overlay dim-50"></div>
     <div class="content center">
         <p id="message2" class="small message reveal theword">
@@ -126,7 +126,7 @@ function scene02() {
     </section>
 
     <!-- ===================== Scene 3 ===================== -->
-    <section class="scene" id="scene3" style="--bg:url('/assets/images/Photos/14.gif')">
+    <section class="scene" id="scene3" style="--bg:url('assets/images/Photos/14.gif')">
         <div id="overlay" class="overlay dim-25"></div>
       <div class="content center">
         <p id="message3" class="small message reveal theword">
@@ -181,7 +181,7 @@ function scene03() {
     </section>
 
     <!-- ===================== Scene 4 ===================== -->
-    <section class="scene" id="scene4" style="--bg:url('/assets/images/Photos/15.gif')">
+    <section class="scene" id="scene4" style="--bg:url('assets/images/Photos/15.gif')">
       <div class="content center">
         <p id="message4" class="small message reveal theword">
             ขอบคุณที่คุณกล้าพอที่จะอ่อนแอบ้าง <br>
@@ -228,7 +228,7 @@ function scene04() {
     </section>
 
     <!-- ===================== Scene 5 ===================== -->
-    <section class="scene" id="scene5" style="--bg:url('/assets/images/Photos/16.gif')">
+    <section class="scene" id="scene5" style="--bg:url('assets/images/Photos/16.gif')">
         <div id="overlay" class="overlay dim-50"></div>
       <div class="content center">
         <p id="message5" class="small message reveal theword">
@@ -281,7 +281,7 @@ function scene05() {
     </section>
 
     <!-- ===================== Scene 6 ===================== -->
-    <section class="scene" id="scene6" style="--bg:url('/assets/images/Photos/17.gif')">
+    <section class="scene" id="scene6" style="--bg:url('assets/images/Photos/17.gif')">
         <div id="overlay6" class="overlay dim-25"></div>
       <div class="content center">
         <p id="message6" class="small message reveal theword">
@@ -376,12 +376,12 @@ function scene07() {
     </section>
 
        <!-- =========== Scene Result (แทนของเดิม) =========== -->
-<section class="scene" id="result" style="--bg:url('/assets/images/Photos/04.gif')">
+<section class="scene" id="result" style="--bg:url('assets/images/Photos/04.gif')">
   <div class="bg-layer"></div>
 
   <div class="result-wrap">
     <div class="poster">
-      <img id="resultImage" alt="ผลลัพธ์ของคุณ" src="/assets/images/Result/C1.png">
+      <img id="resultImage" alt="ผลลัพธ์ของคุณ" src="assets/images/Result/C1.png">
       <!-- พื้นที่คลิก “เพลงของคุณ” -->
       <a id="songHotspot" class="song-hotspot" href="#" target="_blank" rel="noopener"></a>
     </div>
@@ -407,7 +407,7 @@ function scene07() {
     }
 
     /* ===== Config ของผลลัพธ์ A1 ===== */
-  const POSTER_SRC = '/assets/images/Result/C1.png';
+  const POSTER_SRC = 'assets/images/Result/C1.png';
   const SONG_URL   = 'https://www.youtube.com/watch?v=Kub5S4PsSow';
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -473,24 +473,24 @@ document.getElementById('btnDownload').addEventListener('click', () => {
   <script>
   const ASSETS = {
     images: [
-    '/assets/images/Photos/03.jpg',
-    '/assets/images/Photos/04.gif',
-    '/assets/images/Photos/05.gif',
-    '/assets/images/Photos/06.gif',
-    '/assets/images/Photos/07.gif',
-    '/assets/images/Photos/12.gif',
-    '/assets/images/Photos/13.gif',
-    '/assets/images/Photos/14.gif',
-    '/assets/images/Photos/15.gif',
-    '/assets/images/Photos/16.gif',
-    '/assets/images/Photos/17.gif',
-    '/assets/images/Result/A1.png',    ////////////* ไฟล์ Result */////////////
+    'assets/images/Photos/03.jpg',
+    'assets/images/Photos/04.gif',
+    'assets/images/Photos/05.gif',
+    'assets/images/Photos/06.gif',
+    'assets/images/Photos/07.gif',
+    'assets/images/Photos/12.gif',
+    'assets/images/Photos/13.gif',
+    'assets/images/Photos/14.gif',
+    'assets/images/Photos/15.gif',
+    'assets/images/Photos/16.gif',
+    'assets/images/Photos/17.gif',
+    'assets/images/Result/A1.png',    ////////////* ไฟล์ Result */////////////
     ],
     audio: [
-      '/assets/audio/ResultBGM/C1/ทั่วจักรวาล.wav',
-      '/assets/audio/ResultBGM/C1/ทั่วจักรวาลBKT.wav',
-      '/assets/audio/BGM/Effects/Rainfall.mp3',
-      '/assets/audio/BGM/Effects/WaterDrop.wav'
+      'assets/audio/ResultBGM/C1/ทั่วจักรวาล.wav',
+      'assets/audio/ResultBGM/C1/ทั่วจักรวาลBKT.wav',
+      'assets/audio/BGM/Effects/Rainfall.mp3',
+      'assets/audio/BGM/Effects/WaterDrop.wav'
     ]
   };
 
@@ -521,24 +521,24 @@ document.getElementById('btnDownload').addEventListener('click', () => {
   }
 
   var song = new Howl({
-        src: [ "/assets/audio/ResultBGM/C1/ทั่วจักรวาล.wav" ],
+        src: [ "assets/audio/ResultBGM/C1/ทั่วจักรวาล.wav" ],
         loop: true,
         volume: 0,
       });
   
  var backingtrack = new Howl({
-        src: [ "/assets/audio/ResultBGM/C1/ทั่วจักรวาลBKT.wav" ],
+        src: [ "assets/audio/ResultBGM/C1/ทั่วจักรวาลBKT.wav" ],
         loop: true,
         volume: 0,
       }); 
       
 var raindrop = new Howl({
-        src: [ "/assets/audio/BGM/Effects/WaterDrop.wav" ],
+        src: [ "assets/audio/BGM/Effects/WaterDrop.wav" ],
         volume: 0.75,
       }); 
 
 var rain = new Howl({
-        src: [ "/assets/audio/BGM/Effects/Rainfall.mp3" ],
+        src: [ "assets/audio/BGM/Effects/Rainfall.mp3" ],
         volume: 0,
         loop: true,
       }); 
@@ -548,3 +548,4 @@ var rain = new Howl({
 
 </body>
 </html>
+
